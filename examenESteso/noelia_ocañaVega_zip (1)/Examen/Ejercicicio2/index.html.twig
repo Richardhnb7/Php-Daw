@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Ejercicio2Controller!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+   <h1> Consultas</h1>
+<hr>
+<h3>Pedidos con restaurante 1</h3>
+
+<table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>unidades</th>
+            <th>pedido</th>
+            <th>productos</th>
+            
+        </tr>
+    {%for pe in by_productos%}
+        <tr>
+            <td>
+            {{pe.id}}
+            </td>
+            <td>
+            {{pe.Unidades}}
+            </td>
+            <td>
+            {{pe.Pedido}}
+            </td>
+            <td>
+            {{pe.Productos}}
+            </td>
+            
+
+        </tr>
+    {%else%}
+        <tr>
+            <td>NO hay datos para mostrar</td>
+        </tr>
+    {% endfor %}
+    
+</table>
+    
+</div>
+{% endblock %}

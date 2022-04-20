@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultas{% endblock %}
+{%block body%}
+<style>
+    .example-wrapper {margin: 1em auto; max-width: 800px; width:95%; font:18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F55F5; padding:2px 6px}
+</style>
+<h1> Consultas</h1>
+<hr>
+<h3> Restaurantes</h3>
+
+<table class="table table-hover">
+    {% for res in consulta %}
+        <tr>
+            <td>
+            {{res.id}}
+            </td>
+            <td>
+            {{res.correo}}
+            </td>
+            <td>
+            {{res.clave}}
+            </td>
+            <td>
+            {{res.pais}}
+            </td>
+            <td>
+            {{res.cp}}
+            </td>
+            <td>
+            {{res.ciudad}}
+            </td>
+            <td>
+            {{res.direccion}}
+            </td>
+        </tr>
+    {%else%}
+        <tr>
+            <td>NO hay datos para mostrar</td>
+        </tr>
+    {% endfor %}
+    
+
+{%endblock%}

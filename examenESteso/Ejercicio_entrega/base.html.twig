@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Consultas video symfony{% endblock %}
+
+{%block body%}
+<style>
+</style>    
+
+<h1>Consultas</h1>
+<hr>
+<h3>Consultas parte 2 </h3>
+<table class="table table-hover">
+    {% for res in consulta %}
+        <tr>
+            <td>{{res.id}}</td>
+            <td>{{res.correo}}</td>
+            <td>{{res.clave}}</td>
+            <td>{{res.pais}}</td>
+            <td>{{res.cp}}</td>
+            <td>{{res.ciudad}}</td>
+            <td>{{res.direccion}}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td>No hay datos para mostrar</td>
+        </tr>
+    {% endfor %}       
+</table>
+
+
+{% endblock %}    
